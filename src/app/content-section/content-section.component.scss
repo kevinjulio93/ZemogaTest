@@ -1,0 +1,127 @@
+@import "../../assets/helpers/variable.scss";
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  &__message {
+    background-color: #ebebeb;
+    height: auto;
+    width: 80%;
+    margin: 40px 0 20px 0;
+    color: $font-second-color;
+    display: flex;
+    &__title {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      width: 20%;
+      align-items: center;
+      span {
+        font-size: 19px;
+        font-weight: $ligth-font;
+      }
+      h3 {
+        font-size: $h3-size;
+        font-weight: $bold-font;
+      }
+    }
+    &__detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__text {
+        display: block;
+        padding: 25px 0;
+        width: 80%;
+      }
+      img {
+        padding: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+  &__title {
+    font-size: $h2-size;
+    font-weight: $ligth-font;
+    margin: 20px 0px 40px 0;
+    color: $font-second-color;
+    width: 80%;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    width: 80%;
+    justify-content: center;
+  }
+
+  &__add {
+    background-image: url("../../assets/images/people.png");
+    background-position: center;
+    display: flex;
+    height: 101px;
+    width: 80%;
+    margin-top: 25px;
+    &__person {
+      width: 100%;
+      background: #ffffffbd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      &__question {
+        font-size: 30px;
+        font-weight: 300;
+      }
+      &__button {
+        background: transparent;
+        border: 2px solid;
+        padding: 15px 25px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 1534px) {
+  .content-container__message__title {
+    min-width: 219px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .content-container__cards {
+    display: block;
+  }
+}
+
+@media (max-width: 926px) {
+  .content-container__message {
+    flex-direction: column;
+    &__title {
+      padding: 20px 0 0 0;
+    }
+    &__detail {
+      position: relative;
+      &__text {
+        padding: 10px 20px 20px 20px;
+        width: 100%;
+      }
+      img {
+        position: absolute;
+        right: 0;
+        top: -81px;
+      }
+    }
+  }
+}
+
+@media (max-width: 521px) {
+  .content-container {
+    min-width: 521px;
+  }
+}

@@ -1,0 +1,33 @@
+<div class="content-container">
+    <div class="content-container__message" *ngIf="!closeMessage">
+        <div class="content-container__message__title">
+            <span>Speak out. Be heard. </span>
+            <h3>Be counted</h3>
+        </div>
+        <div class="content-container__message__detail">
+            <span class="content-container__message__detail__text">
+                Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and
+                speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.
+            </span>
+            <img (click)="closeMessageFn()" src="../../assets/icons/close.png">
+        </div>
+    </div>
+    <h2 class="content-container__title">
+        Previous Rulings
+    </h2>
+    <div class="content-container__cards">
+        <app-cards *ngFor="let celebrity of celebrities; index as index" [celebrity]="celebrity" [index]="index"
+            (voteEvent)=vote($event)>
+        </app-cards>
+    </div>
+    <div class="content-container__add">
+        <div class="content-container__add__person">
+            <div class="content-container__add__person__question">
+                Is there anyone else you would want us to add?
+            </div>
+            <button class="content-container__add__person__button">
+                Submit a Name
+            </button>
+        </div>
+    </div>
+</div>

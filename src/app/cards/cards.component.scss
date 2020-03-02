@@ -1,0 +1,131 @@
+@import "../../assets/helpers/variable.scss";
+.card {
+  min-height: 550px;
+  position: relative;
+  color: $font-main-color;
+
+  &__detail {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(255, 93, 177, 0) 100%);
+    bottom: 0;
+    height: 406px;
+    position: absolute;
+    width: 100%;
+    &__thumb {
+      align-items: center;
+      display: flex;
+      height: 32px;
+      justify-content: center;
+      position: relative;
+      top: 144px;
+      width: 32px;
+      &--up {
+        background-color: $thumb-agree-color;
+      }
+      &--down {
+        background-color: $thumb-desagree-color;
+      }
+      img {
+        height: 19px;
+        width: 19px;
+      }
+    }
+    &__title {
+      padding: 0px 43px;
+      margin-top: 100px;
+      font-size: $h2-size;
+      font-weight: $regular-font;
+      max-width: 572px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    &__label {
+      padding: 0px 43px;
+      font-size: 14px;
+    }
+    &__description {
+      padding: 0px 43px;
+      width: 357px;
+      margin-top: 20px;
+    }
+    &__button-container {
+      padding: 0px 43px;
+      display: flex;
+      align-items: center;
+
+      &__thumbs {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        margin-top: 20px;
+
+        &--agree {
+          background-color: $thumb-agree-color;
+        }
+
+        &--desagree {
+          background-color: $thumb-desagree-color;
+        }
+
+        &--vote {
+          height: 35px;
+          border: 1px solid #fff;
+          width: 100px;
+          background: transparent;
+          color: $font-main-color;
+          font-size: 14px;
+        }
+        &--vote:focus {
+          outline: none;
+        }
+        &--active {
+          border: 1px solid $font-main-color;
+        }
+
+        img {
+          width: 19px;
+          height: 19px;
+        }
+      }
+    }
+    &__percentage {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      height: auto;
+      width: 100%;
+      font-size: 20px;
+      font-weight: $ligth-font;
+
+      &__thumbs {
+        height: 50px;
+        opacity: 0.8;
+        display: flex;
+        align-items: center;
+
+        &--agree {
+          background: $thumb-agree-color;
+          justify-content: flex-start;
+        }
+        &--desagree {
+          background: $thumb-desagree-color;
+          justify-content: flex-end;
+        }
+        img {
+          width: 29px;
+          height: 29px;
+          margin: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .card {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,38 @@
+@import "../../assets/helpers/variable.scss";
+
+.footer-container {
+  justify-content: center;
+  display: flex;
+  margin-top: 30px;
+  &__info {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    color: $font-second-color;
+    font-size: 12px;
+    height: 50px;
+    border-top: 1px dotted #979797;
+    &__menu {
+        display: flex;
+        align-items: center;
+      span {
+        margin-right: 20px;
+      }
+    }
+    &__social {
+        display: flex;
+        align-items: center;
+      i {
+        font-size: 25px;
+        margin-left: 20px ;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 521px) {
+  .footer-container {
+    min-width: 521px;
+  }
+}

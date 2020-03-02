@@ -1,0 +1,38 @@
+<div class="card" [ngStyle]="{background: 'url(../../assets/images/' + celebrity.image + ')', backgroundSize: 'cover'}">
+
+    <div class="card__detail">
+        <div class="card__detail__thumb" [ngClass]="{'card__detail__thumb--up': celebrity.agree >= celebrity.desagree, 
+                        'card__detail__thumb--down': celebrity.desagree > celebrity.agree}">
+            <img src="../../assets/icons/thumb-up.png" *ngIf="celebrity.agree >= celebrity.desagree">
+            <img src="../../assets/icons/thumb-down.png" *ngIf="celebrity.desagree > celebrity.agree">
+        </div>
+        <h2 class="card__detail__title">{{celebrity.title}}</h2>
+        <span class="card__detail__label"><b>{{celebrity.time}} ago</b> in {{celebrity.section}}</span>
+        <p class="card__detail__description" id="description" >
+            {{celebrity.description}}
+        </p>
+        <div class="card__detail__button-container">
+            <div class="card__detail__button-container__thumbs card__detail__button-container__thumbs--agree spec-agree" 
+                 [ngClass]="{'card__detail__button-container__thumbs--active': target === 'agree'}"   
+                 (click)="setTarget('agree')">
+                <img src="../../assets/icons/thumb-up.png">
+            </div>
+            <div class="card__detail__button-container__thumbs card__detail__button-container__thumbs--desagree "
+                 [ngClass]="{'card__detail__button-container__thumbs--active': target === 'desagree'}"
+                 (click)="setTarget('desagree')">
+                <img src="../../assets/icons/thumb-down.png">
+            </div>
+            <a class="card__detail__button-container__thumbs card__detail__button-container__thumbs--vote spec-vote" (click)="vote()">Vote now</a>
+        </div>
+        <div class="card__detail__percentage">
+            <div class="card__detail__percentage__thumbs card__detail__percentage__thumbs--agree" *ngIf="returnVotes('agree') > 0"
+                [ngStyle]="{ 'width': returnVotes('agree') + '%' }">
+                <img src="../../assets/icons/thumb-up.png"> <span class="spec-value-100">{{returnVotes('agree')}}%</span>
+            </div>
+            <div class="card__detail__percentage__thumbs card__detail__percentage__thumbs--desagree" *ngIf="returnVotes('desagree') > 0"
+                [ngStyle]="{ 'width': returnVotes('desagree') + '%' }">
+                <span>{{returnVotes('desagree')}}%</span> <img src="../../assets/icons/thumb-down.png">
+            </div>
+        </div>
+    </div>
+</div>

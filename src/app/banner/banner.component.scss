@@ -1,0 +1,184 @@
+@import "../../assets/helpers/variable.scss";
+
+.banner-container {
+  background-image: url(../../assets/images/pope.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 720px;
+  width: 100%;
+
+  &__header {
+    background: linear-gradient(to bottom, #585858, rgba(255, 93, 177, 0) 100%);
+    color: white;
+    display: flex;
+    height: 151px;
+    width: 100%;
+    justify-content: center;
+
+    &__content {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &__title {
+        font-size: $h3-size;
+        font-weight: $regular-font;
+      }
+
+      &__menu {
+        font-size: $menu-font-size;
+        font-weight: $ligth-font;
+
+        &--margin {
+          margin-right: 53px;
+          cursor: pointer;
+        }
+
+        &--margin:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__parent {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    &__box {
+      width: 80%;
+      &__content {
+        backdrop-filter: blur(20px);
+        background-color: rgba(151, 148, 147, 0.5);
+        color: $font-main-color;
+        height: 370px;
+        padding: 0 20px;
+        width: 460px;
+
+        &__opinion {
+          font-size: $menu-font-size;
+          font-weight: $ligth-font;
+          position: relative;
+          top: 30px;
+        }
+        &__title {
+          font-size: $h1-size;
+          font-weight: $regular-font;
+          margin-top: 20px;
+        }
+        &__description {
+          font-size: 21px;
+          font-weight: $ligth-font;
+          margin-top: 20px;
+        }
+        &__link {
+          font-size: 14px;
+          font-weight: $ligth-font;
+          margin: 25px 0 30px 0;
+          &--color {
+            color: white;
+            margin-left: 5px;
+          }
+        }
+        &__question {
+          font-size: 21px;
+          font-weight: $bold-font;
+        }
+      }
+      &__thumbs {
+        display: flex;
+        height: auto;
+        width: 500px;
+
+        &--left {
+          align-items: center;
+          background-color: $thumb-agree-color;
+          display: flex;
+          height: 80px;
+          justify-content: center;
+          opacity: 0.9;
+          width: 50%;
+        }
+
+        &--rigth {
+          align-items: center;
+          background-color: $thumb-desagree-color;
+          display: flex;
+          height: 80px;
+          justify-content: center;
+          opacity: 0.9;
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &__closing {
+    width: 100%;
+    height: auto;
+    display: flex;
+    &__container {
+      height: 50px;
+      opacity: 0.8;
+      margin-top: 70px;
+      &--label {
+        width: 30%;
+        background: #707070;
+        font-size: $menu-font-size;
+        font-weight: $regular-font;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: $font-main-color;
+        span {
+          display: block;
+          margin-right: 10px;
+        }
+      }
+      &--remaining-days {
+        width: 70%;
+        background: #fff;
+        font-size: 35px;
+        font-weight: $ligth-font;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: $font-second-color;
+        span {
+          display: block;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1110px) {
+  .banner-container__header__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+  }
+  .banner-container__header__content__menu--margin{
+    margin-right: 20px;
+  }
+  .banner-container {
+    &__parent {
+      &__box {
+        &__content {
+          backdrop-filter: blur(5px);
+          width: auto;
+        }
+        &__thumbs {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 521px) {
+  .banner-container {
+    min-width: 521px;
+  }
+}
